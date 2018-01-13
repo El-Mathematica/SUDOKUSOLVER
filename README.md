@@ -1,2 +1,2 @@
 # SUDOKUSOLVER
-A user inputs a sudoku problem into a table, and it the problem is returned completed.
+A user inputs a sudoku problem into a table, and the problem is returned completed.
