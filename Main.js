@@ -53,10 +53,12 @@
 	// Further development needed for the program to be able to accept variables typed in by a human dynamically
 	//////////////END OF INPUT AND CREATION OF VARIABLES////////////////
   // Solving the Sudoku Solver
-/* function rowAlg (cell) {
+ function rowAlg (cell) {
 	 for (var i = 0; i < comparisonArr.length; i++) {
 		 if (comparisonArr[i].value == null) {
-			 for (var j = 0; j < comparisonArr[i].valuePossibilities.length;
+			 for (var j = 0; j < comparisonArr[i].; j++) {
+				 if (comparisonArr[i].row == 
+			 }
 		 }
 	 } 
  }
@@ -67,5 +69,5 @@
 
  function cellSolver (void) {
    for (var i = 0; i < comparisonArr.length; i++) {
-*/   }
+   }
 print (comparisonArr[0].valuePossibilities.length)
