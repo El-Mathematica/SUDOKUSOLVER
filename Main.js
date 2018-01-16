@@ -43,7 +43,7 @@
 	// Current method of input -  random numbers typed in by a human 
  
 	cellOne.value = 3;
-	cellTwo.value - 4;
+	cellTwo.value = 4;
 	cellThree.value = 1;
 	cellSix.value = 2;
 	cellEleven.value = 2;
@@ -56,8 +56,9 @@
  function rowAlg (cell) {
 	 for (var i = 0; i < comparisonArr.length; i++) {
 		 if (comparisonArr[i].value == null) {
-			 for (var j = 0; j < comparisonArr[i].; j++) {
-				 if (comparisonArr[i].row == 
+			 for (var j = 0; j < comparisonArr[i].valuePossibilities.length; j++) {
+				 if (comparisonArr[i].row == comparisonArr.valuePossibilities[j] 
+				     }
 			 }
 		 }
 	 } 
