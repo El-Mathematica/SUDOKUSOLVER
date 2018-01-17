@@ -57,18 +57,49 @@
 	 for (var i = 0; i < comparisonArr.length; i++) {
 		 if (comparisonArr[i].value == null) {
 			 for (var j = 0; j < comparisonArr[i].valuePossibilities.length; j++) {
-				 if (comparisonArr[i].row == comparisonArr.valuePossibilities[j] 
-				     }
-			 }
+				 if (comparisonArr[i].row == comparisonArr.valuePossibilities[j] {
+				     comparisonArr[i].valuePossibilities.splice(j, 1);
+				}
+		 	}
+		 	if (comparisonArr[i].valuePossibilities.length == 1) { 
+				comparisonArr[i].value == comparisonArr[i].valuePossibilities[0];
+			}
 		 }
 	 } 
  }
  function columnAlg (cell) {
+	 for (var i = 0; i < comparisonArr.length; i++) {
+		 if (comparisonArr[i].value == null) {
+			 for (var j = 0; j < comparisonArr[i].valuePossibilities.length; j++) {
+				 if (comparisonArr[i].column == comparisonArr.valuePossibilities[j] {
+				     comparisonArr[i].valuePossibilities.splice(j, 1);
+				}
+		 	}
+			 if (comparisonArr[i].valuePossibilities.length == 1) { 
+				comparisonArr[i].value == comparisonArr[i].valuePossibilities[0];
+			}
+			 }
+		 }
+	 } 
  }
  function boxAlg (cell) {
+	 for (var i = 0; i < comparisonArr.length; i++) {
+		 if (comparisonArr[i].value == null) {
+			 for (var j = 0; j < comparisonArr[i].valuePossibilities.length; j++) {
+				 if (comparisonArr[i].box == comparisonArr.valuePossibilities[j] {
+				     comparisonArr[i].valuePossibilities.splice(j, 1);
+				}
+			 }
+		 if (comparisonArr[i].valuePossibilities.length == 1) { 
+				comparisonArr[i].value == comparisonArr[i].valuePossibilities[0];
+			}
+		 }
+	 } 
  }
 
  function cellSolver (void) {
-   for (var i = 0; i < comparisonArr.length; i++) {
+    rowAlg;
+    columnAlg;
+    boxAlg;
    }
 print (comparisonArr[0].valuePossibilities.length)
