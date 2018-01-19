@@ -4,7 +4,8 @@
  
 // Current method of adding numbers into the sudoku table - random numbers entered by humans
 // Creating the objects
-  var cellCycleFailure = false;
+  var cellCycleFailure = true;
+  
 	var newCells = function(row, column, box) {
 		this.row = row;
 		this.column = column;
@@ -13,10 +14,15 @@
 		this.valuePossibilities = [1, 2, 3, 4];
 	};
 	// Some test code
-	//var cells = Array();
-	//for (var i = 0; i < 16; i++) cells.push(newCells(Math.floor(i / 4), i % 4, ))
+	var comparisonArr = [];
+	var k = null;
+	for (var i = 0; i < 4; i++) {
+		for (var j = 0; j < 4; j++) {
+			k = Math.floor(i/2)*2 + Math.floor(j/2);
+			cells.push(newCells(i, j, k))
+	}
 	// Creating all the different cells in the sudoku puzzle
-	var cellOne = new newCells(0, 0, 0);
+	/* var cellOne = new newCells(0, 0, 0);
 	var cellTwo = new newCells(0, 1, 0);
 	var cellThree = new newCells(0, 2, 1);
 	var cellFour = new newCells(0, 3, 1);
@@ -31,13 +37,13 @@
 	var cellThirteen = new newCells(3, 0, 2);
 	var cellFourteen = new newCells(3, 1, 2);
 	var cellFifteen = new newCells(3, 2, 3);
-	var cellSixteen = new newCells(3, 3, 3);
+	var cellSixteen = new newCells(3, 3, 3); */
  
 	/* Creating an array pushing all the objects in, so i can use algorithms to compare the
 	the object row by row, column by column etc. */
-	var comparisonArr = [];
+	/*var comparisonArr = [];
 	comparisonArr.push(cellOne, cellTwo, cellThree, cellFour, cellFive, cellSix, cellSeven, cellEight, 
-	cellNine, cellTen, cellEleven, cellTwelve, cellThirteen,cellFourteen, cellFifteen, cellSixteen);
+	cellNine, cellTen, cellEleven, cellTwelve, cellThirteen,cellFourteen, cellFifteen, cellSixteen); */
  
 	// INPUT //
 	// Current method of input -  random numbers typed in by a human 
@@ -53,53 +59,67 @@
 	// Further development needed for the program to be able to accept variables typed in by a human dynamically
 	//////////////END OF INPUT AND CREATION OF VARIABLES////////////////
   // Solving the Sudoku Solver
- function rowAlg (cell) {
+ function rowAlg (void) {
 	 for (var i = 0; i < comparisonArr.length; i++) {
 		 if (comparisonArr[i].value == null) {
 			 for (var j = 0; j < comparisonArr[i].valuePossibilities.length; j++) {
 				 if (comparisonArr[i].row == comparisonArr.valuePossibilities[j] {
 				     comparisonArr[i].valuePossibilities.splice(j, 1);
+				     cellCycleFailure = false;
 				}
 		 	}
 		 	if (comparisonArr[i].valuePossibilities.length == 1) { 
 				comparisonArr[i].value == comparisonArr[i].valuePossibilities[0];
+				cellCycleFailure = false;
 			}
 		 }
 	 } 
  }
- function columnAlg (cell) {
+ function columnAlg (void) {
 	 for (var i = 0; i < comparisonArr.length; i++) {
 		 if (comparisonArr[i].value == null) {
 			 for (var j = 0; j < comparisonArr[i].valuePossibilities.length; j++) {
 				 if (comparisonArr[i].column == comparisonArr.valuePossibilities[j] {
 				     comparisonArr[i].valuePossibilities.splice(j, 1);
+				     cellCycleFailure = false;
 				}
 		 	}
 			 if (comparisonArr[i].valuePossibilities.length == 1) { 
 				comparisonArr[i].value == comparisonArr[i].valuePossibilities[0];
-			}
+				cellCycleFailure = false;
 			 }
 		 }
 	 } 
  }
- function boxAlg (cell) {
+ function boxAlg (void) {
 	 for (var i = 0; i < comparisonArr.length; i++) {
 		 if (comparisonArr[i].value == null) {
 			 for (var j = 0; j < comparisonArr[i].valuePossibilities.length; j++) {
 				 if (comparisonArr[i].box == comparisonArr.valuePossibilities[j] {
 				     comparisonArr[i].valuePossibilities.splice(j, 1);
+				     cellCycleFailure = false;
 				}
 			 }
 		 if (comparisonArr[i].valuePossibilities.length == 1) { 
 				comparisonArr[i].value == comparisonArr[i].valuePossibilities[0];
+				cellCycleFailure = false;
 			}
 		 }
 	 } 
  }
 
  function cellSolver (void) {
-    rowAlg;
-    columnAlg;
-    boxAlg;
-   }
-print (comparisonArr[0].valuePossibilities.length)
+    	rowAlg;
+    	columnAlg;
+    	boxAlg;
+ }
+ function cellChecker (void) {
+	if (cellCycleFailure == true) {
+		print ("Sorry, please enter a sudoku which is actually solvable ")
+	}
+	for (var i = 0; i < comparisonArr.length; i++) {
+		if (comparisonArr[i].value == null) 
+	}
+	 
+ }
+
