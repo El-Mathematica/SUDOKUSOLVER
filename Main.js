@@ -4,6 +4,7 @@
  
 // Current method of adding numbers into the sudoku table - random numbers entered by humans
 // Creating the objects
+    
   var cellCycleFailure = true;
   
 	var newCells = function(row, column, box) {
@@ -19,7 +20,9 @@
 	for (var i = 0; i < 4; i++) {
 		for (var j = 0; j < 4; j++) {
 			k = Math.floor(i/2)*2 + Math.floor(j/2);
-			cells.push(newCells(i, j, k))
+			var f = new newCells(i, j, k);
+			comparisonArr\.push(f);
+		}
 	}
 	// Creating all the different cells in the sudoku puzzle
 	/* var cellOne = new newCells(0, 0, 0);
@@ -115,7 +118,7 @@
  }
  function cellChecker (void) {
 	if (cellCycleFailure == true) {
-		print ("Sorry, please enter a sudoku which is actually solvable ")
+		print ("Sorry, please enter a sudoku which is easily solvable boi")
 	}
 	for (var i = 0; i < comparisonArr.length; i++) {
 		if (comparisonArr[i].value == null) 
