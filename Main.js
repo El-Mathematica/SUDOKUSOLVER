@@ -21,7 +21,7 @@
 		for (var j = 0; j < 4; j++) {
 			k = Math.floor(i/2)*2 + Math.floor(j/2);
 			var f = new newCells(i, j, k);
-			comparisonArr\.push(f);
+			comparisonArr.push(f);
 		}
 	}
 	// Creating all the different cells in the sudoku puzzle
@@ -118,10 +118,13 @@
  }
  function cellChecker (void) {
 	if (cellCycleFailure == true) {
-		print ("Sorry, please enter a sudoku which is easily solvable boi")
+		print ("Sorry, please enter a sudoku which is easily solvable boi");
+		throw new Error();
 	}
 	for (var i = 0; i < comparisonArr.length; i++) {
-		if (comparisonArr[i].value == null) 
+		if (comparisonArr[i].value == null) {
+			
+		}
 	}
 	 
  }
