@@ -1,3 +1,28 @@
+//-- Structure -- 
+// Initialization of variables and grid squares 
+// Input
+// Declaration of sorting methods
+// Declaration of sorting failure
+// Loops if it doesn't manage to solve and doesn't come up with sorting failure
+// Checks if the Program has solved the sudoku 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// your code goes here
 // your code goes here
 //JavaScript-C24.2.0 (SpiderMonkey)
 
@@ -7,9 +32,11 @@
  
 // Current method of adding numbers into the sudoku table - random numbers entered by humans
 // Creating the objects
+   // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     
   var cellCycleFailure = null; // Checks for undefeatable sudoku's 
   var cellFinalizer = true;    // Checks to see if program is ready to output sudoku 
+  var end = false;
   
     var newCells = function(row, column, box) {
         this.row = row;
@@ -28,6 +55,9 @@
             comparisonArr.push(f);
         }
     }
+    
+    // CODE HAS BEEN TESTED AND WORKS FOR SURE ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
     // Creating all the different cells in the sudoku puzzle
     /* var cellOne = new newCells(0, 0, 0);
     var cellTwo = new newCells(0, 1, 0);
@@ -54,22 +84,22 @@
  
     // INPUT //
     // Current method of input -  random numbers typed in by a human 
-    comparisonArr[0] = 3;
-    comparisonArr[1] = 4;
-    comparisonArr[2] = 1;
-    comparisonArr[5] = 2;
-    comparisonArr[10] = 2;
-    comparisonArr[15] = 3;
-    comparisonArr[14] = 4;
-    comparisonArr[13] = 1;
+    comparisonArr[0].value = 3;
+    comparisonArr[1].value = 4;
+    comparisonArr[2].value = 1;
+    comparisonArr[5].value = 2;
+    comparisonArr[10].value = 2;
+    comparisonArr[15].value = 3;
+    comparisonArr[14].value = 4;
+    comparisonArr[13].value = 1;
+    
     
     // Further development needed for the program to be able to accept variables typed in by a human dynamically
     //////////////END OF INPUT AND CREATION OF VARIABLES////////////////
   // Solving the Sudoku Solver
  function rowAlg (x) {
-     cellCycleFailure = true; // one time cycleFailure which will detect if there is no change to the sudoku
      for (var i = 0; i < comparisonArr.length; i++) {
-         if (comparisonArr[i].value == null) {
+         if (comparisonArr[i].value === null) {
              for (var j = 0; j < comparisonArr[i].valuePossibilities.length; j++) {
                  if (comparisonArr[i].row == comparisonArr.valuePossibilities[j]) {
                      comparisonArr[i].valuePossibilities.splice(j, 1);
@@ -122,20 +152,11 @@
     }
 }
  function cellSolver (b) {
+        cellCycleFailure = true; // one time cycleFailure which will detect if there is no change to the sudoku
         rowAlg();
         columnAlg();
         boxAlg();
         cellChecker();
- }
- 
-  function cellFinalizer (c
-                         ) {
-  for (var i = 0; i < comparisonArr.length; i++) {
-      document.write("\n");
-      for (var j = 0; j < 4; j++) {
-            print(comparisonArr[i].value);
-         }
-     }
  }
   function Display (d) {
   
@@ -145,8 +166,18 @@
             cellSolver();
         }
         else {
-        cellFinalizer();        
+	end = true;       
         }  
+        
     }
+    
+    if (end === true) {
+    	for (var i = 0; i < comparisonArr.length; i++) {
+    		print(comparisonArr[i].value);
+    	}
+    }
+    
      
  }
+ Display();
+
