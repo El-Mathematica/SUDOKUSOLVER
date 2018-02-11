@@ -7,25 +7,6 @@
 // Checks if the Program has solved the sudoku
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// your code goes here
-// your code goes here
-//JavaScript-C24.2.0 (SpiderMonkey)
-
 // Sudoku Solver 2018, Javascript version created by Gokul Menon
 
 //------------------------------BEGINNING OF INPUT AND CREATION OF OBJECT VARIABLES--------------------------------//
@@ -41,8 +22,7 @@
   var newCells = function(row, column, box) { // The parent function for the creation of sudoku cells
     this.row = row; // Declares the row property as the row parameter for the newCells function
     this.column = column; // Declares the column property as the column parameter for the newCells function
-    this.box = box; // Declares the box property as the box parameter for the newCells function
-    this.value = 0; // Declares all the values of the sudoku cells as 0
+    this.box = box; // Declares the box property as the box parameter for the newCells function // Declares all the values of the sudoku cells as 0
     this.valuePossibilities = [1, 2, 3, 4]; // Declares all the value possibilities of the sudoku cells
   };
     // Some test code
@@ -58,20 +38,21 @@
     // INPUT //
     // Current method of input -  random numbers typed in by a human
 
-    comparisonArr[0].value = 3;
-    comparisonArr[1].value = 4;
-    comparisonArr[2].value = 1;
-    comparisonArr[5].value = 2;
-    comparisonArr[10].value = 2;
-    comparisonArr[15].value = 3;
-    comparisonArr[14].value = 4;
-    comparisonArr[13].value = 1;
+    comparisonArr[0].valuePossibilities = [3]; // Setting 1st grid square value to 3
+    comparisonArr[1].valuePossibilities = 4; // Setting 2nd grid square value to 4
+    comparisonArr[2].valuePossibilities = 1; // Setting 3rd grid square value to 1
+    comparisonArr[5].valuePossibilities = 2; // Setting 6th grid square value to 2
+    comparisonArr[10].valuePossibilities = 2; // Setting 10th grid square value to 2
+    comparisonArr[15].valuePossibilities = 3; // Setting 16th grid square value to 3
+    comparisonArr[14].valuePossibilities = 4; // Setting 15th grid square value to 4
+    comparisonArr[13].valuePossibilities = 1; // Setting 14th grid square value to 1
+
 
     // CODE HAS BEEN TESTED AND WORKS FOR SURE ----------------------------------------------------------------------------------------------------------------------------------------------------------------
     // Further development needed for the program to be able to accept variables typed in by a human dynamically
     //////////////END OF INPUT AND CREATION OF VARIABLES////////////////
-  // Solving the Sudoku Solver
- function basicAlgorithm() {
+
+ function basicAlgorithm(gridSquare) {
 
 
  }
@@ -91,21 +72,24 @@
 
      // Makes the program finalize the sudoku if no
     for (var i = 0; i < comparisonArr.length; i++) {
-        if (comparisonArr[i].value === null) {
+      print("I have gone through the cellsolver");
+        if (comparisonArr[i].valuePossibilities.length > 1) {
             cellSolver();
         }
         else {
-	end = true;
+	         end = true;
         }
 
     }
 
     if (end === true) {
     	for (var i = 0; i < comparisonArr.length; i++) {
-    		print(comparisonArr[i].value);
+    		print(comparisonArr[i].valuePossibilities);
     	}
     }
 
 
  }
+
+ //ITS TIME TO GO BOYS
  Display();
